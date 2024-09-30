@@ -1,154 +1,98 @@
-<!--Ike Pawsat Website Code-->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Home - Pawsat</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  .w3-half img {
-    max-width: 100%; /* Set the maximum width to 100% of the container */
-    height: auto; /* Maintain the aspect ratio */
-    }
-    .me img {
-        max-width: 80%;
-        height: auto;
-    }
-    .w3-third {
-        text-align: center;
-    }
-    .w3-third h3,
-    .w3-third p {
-        text-align: center;
-    }
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erbil Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background container for moving lines */
+        .moving-lines-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Style for lines */
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: moveLine 10s linear infinite;
+        }
+
+        /* Animation for slow movement of lines */
+        @keyframes moveLine {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        /* Box for centered content */
+        .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 62.5%; /* 5/8 width of the screen */
+            height: 62.5%; /* 5/8 height of the screen */
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="about.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="portfolio.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-  </div>
+<!-- Background for moving lines -->
+<div class="moving-lines-bg" id="movingLines"></div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="index.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="about.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="portfolio.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="contact.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-  </div>
+<!-- Centered box for content -->
+<div class="center-box">
+  <div> <h1>Chat Bot goes here</h1> </div>
 </div>
 
-<div style = "margin-top:50px">
-    <div class="w3-xxlarge w3-padding-16 w3-center" style = "background-color: #050FBF">
-        <div style = "color: #FFF">
-            <h1>John (Ike) Pawsat</h1>
-        </div>
-    </div>
-</div>
-
-
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h3>Boston College Junior</h3>
-        <p>Computer Science B.S. with Data Science Minor
-          with focus in Machine Learning and AI
-        </p>
-
-      <h3>Currently Working for iCode at North Dallas</h3>
-      <p>Working with the next generation of STEM students to instill the basics of coding and robotic skills</p>
-
-      <h3>Job Search Goals</h3>
-      <p>I am a student attempting to get real workplace experience in the summer of 2025 through a hands on internship.
-          Please look around especially in about and my portfolio to see if I could fit your team. I would recommend to
-        start with my AI Tag game.</p>
-
-    </div>
-
-    <div class="w3-third w3-center">
-        <div class="me">
-            <img src="me.jpeg" alt = "me">
-        </div>
-        <h5>ike.pawsat@gmail.com</h5>
-        <h5>(816)-916-2856</h5>
-    </div>
-  </div>
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-      <div class="w3-half">
-        <a href = "AI_Tag.html" target = "_blank"><img src="AI_Intro.PNG" alt="AI Tag"></a>
-          <h3>AI Tag</h3>
-          <p>
-            This was my most intensive project yet, if you only have a few moments, please visit this page where I give a brief overview
-            and a more in depth longer description.
-          </p>
-      </div>
-
-      <div class="w3-half w3-padding-32 w3-right">
-        <h3>Other Projects</h3>
-        <p> To the left is just one of my many projects, I encourage you to take a closer look by clicking the image to go to my portfolio
-          or by scrolling down and clicking on my github. More details about each project can be found in these places. Thank you!</p>
-    </div>
-  </div>
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-      <div class="w3-twothird">
-          <h1>Brief Bio</h1>
-          <h5 class="w3-padding-32">Hello, I am Ike Pawsat, a current Boston College Junior who would love to join your team. I am an avid
-          athlete and love challenging myself. In this July 2024 I will be running a full Ironman, an achievement I have wanted to do since I was a
-          sophomore in highschool. I'd like to invite you to check out the About section for more details on me, my portfolio section, and the
-          different ways to contact me. Thank you.</h5>
-      </div>
-
-      <div class="w3-third w3-center">
-          <div class = "me">
-              <a href="resume.pdf" download="resume.pdf" target="_blank"><img src="resume.png" alt="Download Resume"></a>
-          </div>
-          <h3>Resume</h3>
-          <p>Click to download</p>
-      </div>
-  </div>
-</div>
-
-<footer class="w3-container w3-padding-10 w3-center" style="background-color: #050FBF;">
-  <div class="w3-xxlarge w3-padding-16" style = "color: #FFF">
-    <a href="https://github.com/ikepawsat" target="_blank" class="w3-hover-opacity">
-        <i class="fa fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/john-pawsat-a9748627a/" target="_blank" class="w3-hover-opacity">
-        <i class="fa fa-linkedin"></i>
-    </a>
- </div>
-    <div style = "color: #FFF">
-        <p>Possible with help from <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-     and powered by <a href="https://github.com/" target="_blank">github.com</a></p>
-    </div>
-</footer>
-
+<!-- JavaScript to add new lines and control their movement -->
 <script>
+    // Function to create lines at random positions
+    function createLine() {
+        const line = document.createElement("div");
+        line.classList.add("line");
+        line.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+        document.getElementById("movingLines").appendChild(line);
 
+        // Remove the line once the animation is done
+        setTimeout(() => {
+            line.remove();
+        }, 10000); // 10 seconds (same as animation duration)
+    }
+
+    // Create a new line every 0.75 seconds
+    setInterval(createLine, 750);
 </script>
 
 </body>
